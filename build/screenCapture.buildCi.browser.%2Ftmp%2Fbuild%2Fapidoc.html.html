@@ -1,0 +1,1462 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/paldepind/flyd">flyd (v0.2.4)</a>
+</h1>
+<h4>The less is more, modular, functional reactive programming library</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.flyd">module flyd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.combine">
+            function <span class="apidocSignatureSpan">flyd.</span>combine
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.curryN">
+            function <span class="apidocSignatureSpan">flyd.</span>curryN
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.endsOn">
+            function <span class="apidocSignatureSpan">flyd.</span>endsOn
+            <span class="apidocSignatureSpan">(endS, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.immediate">
+            function <span class="apidocSignatureSpan">flyd.</span>immediate
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.isStream">
+            function <span class="apidocSignatureSpan">flyd.</span>isStream
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.map">
+            function <span class="apidocSignatureSpan">flyd.</span>map
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.merge">
+            function <span class="apidocSignatureSpan">flyd.</span>merge
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.on">
+            function <span class="apidocSignatureSpan">flyd.</span>on
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.scan">
+            function <span class="apidocSignatureSpan">flyd.</span>scan
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.stream">
+            function <span class="apidocSignatureSpan">flyd.</span>stream
+            <span class="apidocSignatureSpan">(initialValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.transduce">
+            function <span class="apidocSignatureSpan">flyd.</span>transduce
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>flyd</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">flyd.</span>oldflyd</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.flyd.flyd">module flyd.flyd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.combine">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>combine
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.curryN">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>curryN
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.endsOn">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>endsOn
+            <span class="apidocSignatureSpan">(endS, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.immediate">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>immediate
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.isStream">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>isStream
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.map">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>map
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.merge">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>merge
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.on">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>on
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.scan">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>scan
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.stream">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>stream
+            <span class="apidocSignatureSpan">(initialValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.flyd.transduce">
+            function <span class="apidocSignatureSpan">flyd.flyd.</span>transduce
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.flyd.oldflyd">module flyd.oldflyd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.curryN">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>curryN
+            <span class="apidocSignatureSpan">(length, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.endsOn">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>endsOn
+            <span class="apidocSignatureSpan">(endS, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.immediate">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>immediate
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.isStream">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>isStream
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.map">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>map
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.merge">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>merge
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.reduce">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>reduce
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.scan">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>scan
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.stream">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>stream
+            <span class="apidocSignatureSpan">(arg, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.flyd.oldflyd.transduce">
+            function <span class="apidocSignatureSpan">flyd.oldflyd.</span>transduce
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">flyd.oldflyd.</span>_</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.flyd" id="apidoc.module.flyd">module flyd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.combine" id="apidoc.element.flyd.combine">
+        function <span class="apidocSignatureSpan">flyd.</span>combine
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">combine = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Clicks events will now flow down the `clicks` stream and WebSockets messages
+down the `messages` stream.
+
+### Dependent streams
+
+Streams can depend on other streams. Use `var combined = flyd.<span class="apidocCodeKeywordSpan">combine</span>(combineFn, [a,
+b, c, ...])`.
+The `combineFn` function will be called as `(a, b, c, ..., self, changed) =&gt; v`,
+where `a, b, c, ...` is a spread of each dependency, `self` is a reference to the
+combine stream itself, and `changed` is an array of streams that were atomically
+updated.
+
+Flyd automatically updates the stream whenever a dependency changes.  This
+means that the `sum` function below will be called whenever `x` and `y`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.curryN" id="apidoc.element.flyd.curryN">
+        function <span class="apidocSignatureSpan">flyd.</span>curryN
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function f2(a, b) {
+  switch (arguments.length) {
+    case 0:
+      return f2;
+    case 1:
+      return _isPlaceholder(a) ? f2
+           : _curry1(function(_b) { return fn(a, _b); });
+    default:
+      return _isPlaceholder(a) &amp;&amp; _isPlaceholder(b) ? f2
+           : _isPlaceholder(a) ? _curry1(function(_a) { return fn(_a, b); })
+           : _isPlaceholder(b) ? _curry1(function(_b) { return fn(a, _b); })
+           : fn(a, b);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+var s2 = flyd.transduce(tx, s1);
+flyd.combine(function(s2) { results.push(s2()); }, [s2]);
+s1(1)(1)(2)(3)(3)(3)(4);
+results; // [2, 4, 6, 8]
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">curryN</span>(n, fn)
+
+Returns `fn` curried to `n`. Use this function to curry functions exposed by
+modules for Flyd.
+
+__Signature__
+
+`Integer -&gt; (* -&gt; a) -&gt; (* -&gt; a)`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.endsOn" id="apidoc.element.flyd.endsOn">
+        function <span class="apidocSignatureSpan">flyd.</span>endsOn
+        <span class="apidocSignatureSpan">(endS, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endsOn = function (endS, s) {
+  detachDeps(s.end);
+  endS.listeners.push(s.end);
+  s.end.deps.push(endS);
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.<span class="apidocCodeKeywordSpan">endsOn</span>(flyd.merge(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.immediate" id="apidoc.element.flyd.immediate">
+        function <span class="apidocSignatureSpan">flyd.</span>immediate
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">immediate = function (s) {
+  if (s.depsMet === false) {
+    s.depsMet = true;
+    updateStream(s);
+  }
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var s = flyd.stream(1);
+var n = 1;
+flyd.isStream(s); //=&gt; true
+flyd.isStream(n); //=&gt; false
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">immediate</span>(stream)
+
+By default the body of a dependent stream is only called when all the streams
+upon which it depends has a value. `immediate` can circumvent this behaviour.
+It immediately invokes the body of a dependent stream.
+
+__Signature__
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.isStream" id="apidoc.element.flyd.isStream">
+        function <span class="apidocSignatureSpan">flyd.</span>isStream
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStream = function (stream) {
+  return isFunction(stream) &amp;&amp; 'hasVal' in stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Stream endings
+
+When you create a stream with `flyd.stream` it will have an `end` property
+which is also a stream. That is an _end stream_:
+
+```javascript
+var s = flyd.stream();
+console.log(flyd.<span class="apidocCodeKeywordSpan">isStream</span>(s.end)); // logs `true`
+```
+
+You can end a stream by pushing `true` into its end stream:
+
+```javascript
+var s = flyd.stream();
+s.end(true); // this ends `s`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.map" id="apidoc.element.flyd.map">
+        function <span class="apidocSignatureSpan">flyd.</span>map
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create two streams of numbers
+var x = flyd.stream(1);
+var y = flyd.stream(2);
+var sum = flyd.combine(function(x, y, self, changed) {
+  // The stream can read from itself
+  console.log('Last sum was ' + self());
+  // On the initial call no streams has changed and `changed` will be []
+  changed.<span class="apidocCodeKeywordSpan">map</span>(function(s) {
+    var changedName = (s === y ? 'y' : 'x');
+    console.log(changedName + ' changed to ' + s());
+  });
+  return x() + y();
+}, [x, y]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.merge" id="apidoc.element.flyd.merge">
+        function <span class="apidocSignatureSpan">flyd.</span>merge
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.endsOn(flyd.<span class="apidocCodeKeywordSpan">merge</span>(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.on" id="apidoc.element.flyd.on">
+        function <span class="apidocSignatureSpan">flyd.</span>on
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Flyd has inbuilt support for promises. Similarly to how a promise can never be
+resolved with a promise, a promise can never flow down a stream. Instead the
+fulfilled value of the promise will be sent down the stream.
+
+```javascript
+var urls = flyd.stream('/something.json');
+var responses = flyd.stream(requestPromise(urls()));
+flyd.<span class="apidocCodeKeywordSpan">on</span>(function(responses) {
+  console.log('Received response!');
+  console.log(responses());
+}, responses);
+```
+
+### Mapping over a stream
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.scan" id="apidoc.element.flyd.scan">
+        function <span class="apidocSignatureSpan">flyd.</span>scan
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+__Example__
+```javascript
+var numbers = flyd.stream(0);
+flyd.on(function(n) { console.log('numbers changed to', n); }, numbers);
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">scan</span>(fn, acc, stream)
+
+Creates a new stream with the results of calling the function on every incoming
+stream with and accumulator and the incoming value.
+
+__Signature__
+
+`(a -&gt; b -&gt; a) -&gt; a -&gt; Stream b -&gt; Stream a`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.stream" id="apidoc.element.flyd.stream">
+        function <span class="apidocSignatureSpan">flyd.</span>stream
+        <span class="apidocSignatureSpan">(initialValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (initialValue) {
+  var endStream = createDependentStream([], trueFn);
+  var s = createStream();
+  s.end = endStream;
+  s.fnArgs = [];
+  endStream.listeners.push(s);
+  s.toJSON = function() {
+    return s();
+  };
+  if (arguments.length &gt; 0) s(initialValue);
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The function `flyd.stream` creates a representation of a value that changes
+over time. The resulting stream is a function. At first sight it works a bit
+like a getter-setter:
+
+```javascript
+// Create a stream with initial value 5.
+var number = flyd.<span class="apidocCodeKeywordSpan">stream</span>(5);
+// Get the current value of the stream.
+console.log(number()); // logs 5
+// Update the value of the stream.
+console.log(number(7));
+// The stream now returns the new value.
+console.log(number()); // logs 7
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.transduce" id="apidoc.element.flyd.transduce">
+        function <span class="apidocSignatureSpan">flyd.</span>transduce
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transduce = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var btn1Clicks = flyd.stream();
+button1Elm.addEventListener(btn1Clicks);
+var btn2Clicks = flyd.stream();
+button2Elm.addEventListener(btn2Clicks);
+var allClicks = flyd.merge(btn1Clicks, btn2Clicks);
+```
+
+### flyd.<span class="apidocCodeKeywordSpan">transduce</span>(transducer, stream)
+
+Creates a new stream resulting from applying `transducer` to `stream`.
+
+__Signature__
+
+`Transducer -&gt; Stream a -&gt; Stream b`
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.flyd.flyd" id="apidoc.module.flyd.flyd">module flyd.flyd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.combine" id="apidoc.element.flyd.flyd.combine">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>combine
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">combine = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Clicks events will now flow down the `clicks` stream and WebSockets messages
+down the `messages` stream.
+
+### Dependent streams
+
+Streams can depend on other streams. Use `var combined = flyd.<span class="apidocCodeKeywordSpan">combine</span>(combineFn, [a,
+b, c, ...])`.
+The `combineFn` function will be called as `(a, b, c, ..., self, changed) =&gt; v`,
+where `a, b, c, ...` is a spread of each dependency, `self` is a reference to the
+combine stream itself, and `changed` is an array of streams that were atomically
+updated.
+
+Flyd automatically updates the stream whenever a dependency changes.  This
+means that the `sum` function below will be called whenever `x` and `y`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.curryN" id="apidoc.element.flyd.flyd.curryN">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>curryN
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function f2(a, b) {
+  switch (arguments.length) {
+    case 0:
+      return f2;
+    case 1:
+      return _isPlaceholder(a) ? f2
+           : _curry1(function(_b) { return fn(a, _b); });
+    default:
+      return _isPlaceholder(a) &amp;&amp; _isPlaceholder(b) ? f2
+           : _isPlaceholder(a) ? _curry1(function(_a) { return fn(_a, b); })
+           : _isPlaceholder(b) ? _curry1(function(_b) { return fn(a, _b); })
+           : fn(a, b);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+var s2 = flyd.transduce(tx, s1);
+flyd.combine(function(s2) { results.push(s2()); }, [s2]);
+s1(1)(1)(2)(3)(3)(3)(4);
+results; // [2, 4, 6, 8]
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">curryN</span>(n, fn)
+
+Returns `fn` curried to `n`. Use this function to curry functions exposed by
+modules for Flyd.
+
+__Signature__
+
+`Integer -&gt; (* -&gt; a) -&gt; (* -&gt; a)`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.endsOn" id="apidoc.element.flyd.flyd.endsOn">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>endsOn
+        <span class="apidocSignatureSpan">(endS, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endsOn = function (endS, s) {
+  detachDeps(s.end);
+  endS.listeners.push(s.end);
+  s.end.deps.push(endS);
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.<span class="apidocCodeKeywordSpan">endsOn</span>(flyd.merge(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.immediate" id="apidoc.element.flyd.flyd.immediate">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>immediate
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">immediate = function (s) {
+  if (s.depsMet === false) {
+    s.depsMet = true;
+    updateStream(s);
+  }
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var s = flyd.stream(1);
+var n = 1;
+flyd.isStream(s); //=&gt; true
+flyd.isStream(n); //=&gt; false
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">immediate</span>(stream)
+
+By default the body of a dependent stream is only called when all the streams
+upon which it depends has a value. `immediate` can circumvent this behaviour.
+It immediately invokes the body of a dependent stream.
+
+__Signature__
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.isStream" id="apidoc.element.flyd.flyd.isStream">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>isStream
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStream = function (stream) {
+  return isFunction(stream) &amp;&amp; 'hasVal' in stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Stream endings
+
+When you create a stream with `flyd.stream` it will have an `end` property
+which is also a stream. That is an _end stream_:
+
+```javascript
+var s = flyd.stream();
+console.log(flyd.<span class="apidocCodeKeywordSpan">isStream</span>(s.end)); // logs `true`
+```
+
+You can end a stream by pushing `true` into its end stream:
+
+```javascript
+var s = flyd.stream();
+s.end(true); // this ends `s`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.map" id="apidoc.element.flyd.flyd.map">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>map
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create two streams of numbers
+var x = flyd.stream(1);
+var y = flyd.stream(2);
+var sum = flyd.combine(function(x, y, self, changed) {
+  // The stream can read from itself
+  console.log('Last sum was ' + self());
+  // On the initial call no streams has changed and `changed` will be []
+  changed.<span class="apidocCodeKeywordSpan">map</span>(function(s) {
+    var changedName = (s === y ? 'y' : 'x');
+    console.log(changedName + ' changed to ' + s());
+  });
+  return x() + y();
+}, [x, y]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.merge" id="apidoc.element.flyd.flyd.merge">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>merge
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.endsOn(flyd.<span class="apidocCodeKeywordSpan">merge</span>(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.on" id="apidoc.element.flyd.flyd.on">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>on
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Flyd has inbuilt support for promises. Similarly to how a promise can never be
+resolved with a promise, a promise can never flow down a stream. Instead the
+fulfilled value of the promise will be sent down the stream.
+
+```javascript
+var urls = flyd.stream('/something.json');
+var responses = flyd.stream(requestPromise(urls()));
+flyd.<span class="apidocCodeKeywordSpan">on</span>(function(responses) {
+  console.log('Received response!');
+  console.log(responses());
+}, responses);
+```
+
+### Mapping over a stream
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.scan" id="apidoc.element.flyd.flyd.scan">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>scan
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+__Example__
+```javascript
+var numbers = flyd.stream(0);
+flyd.on(function(n) { console.log('numbers changed to', n); }, numbers);
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">scan</span>(fn, acc, stream)
+
+Creates a new stream with the results of calling the function on every incoming
+stream with and accumulator and the incoming value.
+
+__Signature__
+
+`(a -&gt; b -&gt; a) -&gt; a -&gt; Stream b -&gt; Stream a`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.stream" id="apidoc.element.flyd.flyd.stream">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>stream
+        <span class="apidocSignatureSpan">(initialValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (initialValue) {
+  var endStream = createDependentStream([], trueFn);
+  var s = createStream();
+  s.end = endStream;
+  s.fnArgs = [];
+  endStream.listeners.push(s);
+  s.toJSON = function() {
+    return s();
+  };
+  if (arguments.length &gt; 0) s(initialValue);
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The function `flyd.stream` creates a representation of a value that changes
+over time. The resulting stream is a function. At first sight it works a bit
+like a getter-setter:
+
+```javascript
+// Create a stream with initial value 5.
+var number = flyd.<span class="apidocCodeKeywordSpan">stream</span>(5);
+// Get the current value of the stream.
+console.log(number()); // logs 5
+// Update the value of the stream.
+console.log(number(7));
+// The stream now returns the new value.
+console.log(number()); // logs 7
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.flyd.transduce" id="apidoc.element.flyd.flyd.transduce">
+        function <span class="apidocSignatureSpan">flyd.flyd.</span>transduce
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transduce = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var btn1Clicks = flyd.stream();
+button1Elm.addEventListener(btn1Clicks);
+var btn2Clicks = flyd.stream();
+button2Elm.addEventListener(btn2Clicks);
+var allClicks = flyd.merge(btn1Clicks, btn2Clicks);
+```
+
+### flyd.<span class="apidocCodeKeywordSpan">transduce</span>(transducer, stream)
+
+Creates a new stream resulting from applying `transducer` to `stream`.
+
+__Signature__
+
+`Transducer -&gt; Stream a -&gt; Stream b`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.flyd.oldflyd" id="apidoc.module.flyd.oldflyd">module flyd.oldflyd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.curryN" id="apidoc.element.flyd.oldflyd.curryN">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>curryN
+        <span class="apidocSignatureSpan">(length, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function curryN(length, fn) {
+  return ofArity(length, function () {
+    var n = arguments.length;
+    var shortfall = length - n;
+    var idx = n;
+    while (--idx &gt;= 0) {
+      if (isPlaceholder(arguments[idx])) {
+        shortfall += 1;
+      }
+    }
+    if (shortfall &lt;= 0) {
+      return fn.apply(this, arguments);
+    } else {
+      var initialArgs = toArray(arguments);
+      return curryN(shortfall, function () {
+        var currentArgs = toArray(arguments);
+        var combinedArgs = [];
+        var idx = -1;
+        while (++idx &lt; n) {
+          var val = initialArgs[idx];
+          combinedArgs[idx] = isPlaceholder(val) ? currentArgs.shift() : val;
+        }
+        return fn.apply(this, combinedArgs.concat(currentArgs));
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+var s2 = flyd.transduce(tx, s1);
+flyd.combine(function(s2) { results.push(s2()); }, [s2]);
+s1(1)(1)(2)(3)(3)(3)(4);
+results; // [2, 4, 6, 8]
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">curryN</span>(n, fn)
+
+Returns `fn` curried to `n`. Use this function to curry functions exposed by
+modules for Flyd.
+
+__Signature__
+
+`Integer -&gt; (* -&gt; a) -&gt; (* -&gt; a)`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.endsOn" id="apidoc.element.flyd.oldflyd.endsOn">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>endsOn
+        <span class="apidocSignatureSpan">(endS, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function endsOn(endS, s) {
+  detachDeps(s.end);
+  endS.listeners.push(s.end);
+  s.end.deps.push(endS);
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.<span class="apidocCodeKeywordSpan">endsOn</span>(flyd.merge(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.immediate" id="apidoc.element.flyd.oldflyd.immediate">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>immediate
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function immediate(s) {
+  if (s.depsMet === false) {
+    s.depsMet = true;
+    updateStream(s);
+    if (toUpdate.length !== 0) flushUpdate();
+  }
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var s = flyd.stream(1);
+var n = 1;
+flyd.isStream(s); //=&gt; true
+flyd.isStream(n); //=&gt; false
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">immediate</span>(stream)
+
+By default the body of a dependent stream is only called when all the streams
+upon which it depends has a value. `immediate` can circumvent this behaviour.
+It immediately invokes the body of a dependent stream.
+
+__Signature__
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.isStream" id="apidoc.element.flyd.oldflyd.isStream">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>isStream
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isStream(stream) {
+  return isFunction(stream) &amp;&amp; 'hasVal' in stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Stream endings
+
+When you create a stream with `flyd.stream` it will have an `end` property
+which is also a stream. That is an _end stream_:
+
+```javascript
+var s = flyd.stream();
+console.log(flyd.<span class="apidocCodeKeywordSpan">isStream</span>(s.end)); // logs `true`
+```
+
+You can end a stream by pushing `true` into its end stream:
+
+```javascript
+var s = flyd.stream();
+s.end(true); // this ends `s`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.map" id="apidoc.element.flyd.oldflyd.map">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>map
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (a0, a1) {
+  void a1;
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create two streams of numbers
+var x = flyd.stream(1);
+var y = flyd.stream(2);
+var sum = flyd.combine(function(x, y, self, changed) {
+  // The stream can read from itself
+  console.log('Last sum was ' + self());
+  // On the initial call no streams has changed and `changed` will be []
+  changed.<span class="apidocCodeKeywordSpan">map</span>(function(s) {
+    var changedName = (s === y ? 'y' : 'x');
+    console.log(changedName + ' changed to ' + s());
+  });
+  return x() + y();
+}, [x, y]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.merge" id="apidoc.element.flyd.oldflyd.merge">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>merge
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (a0, a1) {
+  void a1;
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `sum`s dependencies end `sum` will end as well.
+
+You can change what a stream's end stream depends on with `flyd.endsOn`:
+
+```javascript
+var number = flyd.stream(2);
+var killer = flyd.stream();
+var square = flyd.endsOn(flyd.<span class="apidocCodeKeywordSpan">merge</span>(number.end, killer), flyd.combine(function(number
+) {
+  return number() * number();
+}, [number]));
+```
+
+Now `square` will end if either `number` ends or if `killer` emits a value.
+
+The fact that a stream's ending is itself a stream is a very powerful concept.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.reduce" id="apidoc.element.flyd.oldflyd.reduce">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>reduce
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reduce = function (a0, a1, a2) {
+  void a2;
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.scan" id="apidoc.element.flyd.oldflyd.scan">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>scan
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function (a0, a1, a2) {
+  void a2;
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+__Example__
+```javascript
+var numbers = flyd.stream(0);
+flyd.on(function(n) { console.log('numbers changed to', n); }, numbers);
+```
+
+###flyd.<span class="apidocCodeKeywordSpan">scan</span>(fn, acc, stream)
+
+Creates a new stream with the results of calling the function on every incoming
+stream with and accumulator and the incoming value.
+
+__Signature__
+
+`(a -&gt; b -&gt; a) -&gt; a -&gt; Stream b -&gt; Stream a`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.stream" id="apidoc.element.flyd.oldflyd.stream">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>stream
+        <span class="apidocSignatureSpan">(arg, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stream(arg, fn) {
+  var i, s, deps;
+  var endStream = createDependentStream([], function() { return true; });
+  if (arguments.length &gt; 1) {
+    deps = arg.filter(notUndef);
+    s = createDependentStream(deps, fn);
+    s.end = endStream;
+    endStream.listeners.push(s);
+    var depEndStreams = [];
+    for (i = 0; i &lt; deps.length; ++i) {
+      if (deps[i].end !== undefined) depEndStreams.push(deps[i].end);
+    }
+    endsOn(createDependentStream(depEndStreams, function() { return true; }, true), s);
+    updateStream(s);
+    if (toUpdate.length !== 0) flushUpdate();
+  } else {
+    s = createStream();
+    s.end = endStream;
+    endStream.listeners.push(s);
+    if (arguments.length === 1) s(arg);
+  }
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The function `flyd.stream` creates a representation of a value that changes
+over time. The resulting stream is a function. At first sight it works a bit
+like a getter-setter:
+
+```javascript
+// Create a stream with initial value 5.
+var number = flyd.<span class="apidocCodeKeywordSpan">stream</span>(5);
+// Get the current value of the stream.
+console.log(number()); // logs 5
+// Update the value of the stream.
+console.log(number(7));
+// The stream now returns the new value.
+console.log(number()); // logs 7
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.flyd.oldflyd.transduce" id="apidoc.element.flyd.oldflyd.transduce">
+        function <span class="apidocSignatureSpan">flyd.oldflyd.</span>transduce
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transduce = function (a0, a1) {
+  void a1;
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var btn1Clicks = flyd.stream();
+button1Elm.addEventListener(btn1Clicks);
+var btn2Clicks = flyd.stream();
+button2Elm.addEventListener(btn2Clicks);
+var allClicks = flyd.merge(btn1Clicks, btn2Clicks);
+```
+
+### flyd.<span class="apidocCodeKeywordSpan">transduce</span>(transducer, stream)
+
+Creates a new stream resulting from applying `transducer` to `stream`.
+
+__Signature__
+
+`Transducer -&gt; Stream a -&gt; Stream b`
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
